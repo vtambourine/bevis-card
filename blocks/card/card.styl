@@ -1,0 +1,49 @@
+.card
+  $width = 540px
+  $height = 300px
+  $border-top-width = 0.5*$height
+  $border-left-width = 0.15*$width
+
+  display table-cell
+  vertical-align middle
+  text-align center
+
+  &__self
+    display inline-block
+    width 0.85*$width
+    height $height
+    margin-left -($border-left-width)
+    text-align left
+    background white url('yandex-logo.svg') 27px center no-repeat
+
+    &:before
+      float right
+      display block
+      width 0
+      margin-right -($border-left-width)
+      content ''
+      border-width $border-top-width 0 $border-top-width $border-left-width
+      border-color transparent transparent transparent white
+      border-style solid
+      background-color transparent
+
+  &__credential
+    margin-left 165px
+
+  &__title
+    min-height 98px
+    margin-top 30px
+
+  &__name
+    font-weight normal
+    font-size 27px
+    margin 0
+
+  &__position
+    font-weight normal
+    font-size 14px
+    line-height 1
+    margin 0
+
+  &__contact
+    margin-bottom 10px

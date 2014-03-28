@@ -1,0 +1,5 @@
+node_modules
+.enb/tmp
+*.css
+pages/index/*
+!pages/index/*.bemjson.js

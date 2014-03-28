@@ -1,0 +1,12 @@
+{
+    "name": "bevis-card",
+    "version": "0.0.0",
+    "author": "Benjamin Tambourine",
+    "description": "Yandex buisness card by BEViS",
+    "dependencies": {
+        "enb": "~0.8.43",
+        "enb-bt": "~0.0.17"
+    },
+    "keywords": [ "bevis", "enb", "bt" ],
+    "license": "MIT"
+}
