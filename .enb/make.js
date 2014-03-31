@@ -7,7 +7,7 @@ module.exports = function (config) {
             require('enb/techs/deps'),
             require('enb/techs/files'),
             [ require('enb-bt/techs/bt-server') ],
-            require('enb/techs/css-stylus'),
+            require('enb-stylus/techs/css-stylus-with-autoprefixer'),
             require('enb/techs/js'),
             [ require('enb/techs/html-from-bemjson'), {
                 bemhtmlTarget: '?.bt.js',
