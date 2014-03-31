@@ -49,7 +49,7 @@ module.exports = function (bt) {
             return {
                 elem: field,
                 content: ctx.getParam(field)
-            }
+            };
         }));
     });
 
@@ -60,7 +60,7 @@ module.exports = function (bt) {
             return {
                 elem: field,
                 content: ctx.getParam(field)
-            }
+            };
         }));
     });
 
@@ -71,7 +71,7 @@ module.exports = function (bt) {
             return {
                 elem: field,
                 content: ctx.getParam(field)
-            }
+            };
         }));
     });
 

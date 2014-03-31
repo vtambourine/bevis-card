@@ -1,23 +1,26 @@
 {
-    "author": "Benjamin Tambourine <vtambourine@ya.ru> (alienstook.me)",
-    "name": "bevis-card",
-    "version": "0.0.1",
-    "description": "Yandex buisness card. Sample project built on BEViS.",
-    "repositoty": {
-        "type": "git",
-        "url": "https://github.com/vtambourine/bevis-card"
-    }
-    "dependencies": {},
-    "devDependencies": {
-        "enb": "~0.10.0",
-        "enb-bt": "~0.0.17",
-        "enb-stylus": "~0.0.3"
-    },
-    "keywords": [
-        "bevis",
-        "enb",
-        "bt",
-        "yandex"
-    ],
-    "license": "MIT"
+  "author": "Benjamin Tambourine <vtambourine@ya.ru> (alienstook.me)",
+  "name": "bevis-card",
+  "version": "0.0.1",
+  "description": "Yandex buisness card. Sample project built on BEViS.",
+  "repositoty": {
+    "type": "git",
+    "url": "https://github.com/vtambourine/bevis-card"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "enb": "~0.10.0",
+    "enb-bt": "~0.0.17",
+    "enb-stylus": "~0.0.3",
+    "jscs": "~1.3.0",
+    "jshint": "~2.4.4",
+    "jshint-groups": "~0.6.0"
+  },
+  "keywords": [
+    "bevis",
+    "enb",
+    "bt",
+    "yandex"
+  ],
+  "license": "MIT"
 }

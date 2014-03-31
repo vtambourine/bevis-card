@@ -6,14 +6,14 @@ module.exports = function (bt) {
                elem: 'script',
                url: script.url,
                source: script.source
-           }
+           };
         });
         ctx.setContent([ctx.getParam('body'), scripts]);
         var stylesheets = ctx.getParam('styles').map(function (style) {
             return {
                 elem: 'stylesheet',
                 url: style.url
-            }
+            };
         });
         return [
             '<!doctype html>',
@@ -37,7 +37,7 @@ module.exports = function (bt) {
                     ctx.getJson(),
                 ]
             }
-        ]
+        ];
     });
 
     bt.match('page__html', function (ctx) {
@@ -83,5 +83,5 @@ module.exports = function (bt) {
         ctx.setTag('link');
         ctx.setAttr('rel', 'stylesheet');
         ctx.setAttr('href', ctx.getParam('url'));
-    })
+    });
 };
