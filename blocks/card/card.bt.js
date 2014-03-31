@@ -14,6 +14,14 @@ module.exports = function (bt) {
                     phone: ctx.getParam('phone'),
                     cellular: ctx.getParam('cellular'),
                     site: ctx.getParam('site')
+                },
+                {
+                    elem: 'social',
+                    content: ctx.getParam('social'),
+                    email: ctx.getParam('email'),
+                    github: ctx.getParam('github'),
+                    linkedin: ctx.getParam('linkedin'),
+                    skype: ctx.getParam('skype')
                 }
             ]
         });
@@ -29,16 +37,13 @@ module.exports = function (bt) {
 
     bt.match('card__title', function (ctx) {
         ctx.setTag('header');
-        ctx.setContent([
-            {
-                elem: 'name',
-                content: ctx.getParam('name')
-            },
-            {
-                elem: 'position',
-                content: ctx.getParam('position')
+        var fields = ['name', 'position'];
+        ctx.setContent(fields.map(function (field) {
+            return {
+                elem: field,
+                content: ctx.getParam(field)
             }
-        ])
+        }));
     });
 
     bt.match('card__contact', function (ctx) {
@@ -50,6 +55,25 @@ module.exports = function (bt) {
                 content: ctx.getParam(field)
             }
         }));
+    });
+
+    bt.match('card__social', function (ctx) {
+        ctx.setTag('section');
+        var fields = ['email', 'github', 'linkedin', 'skype'];
+        ctx.setContent(fields.map(function (field) {
+            return {
+                elem: field,
+                content: ctx.getParam(field)
+            }
+        }));
+    });
+
+    bt.match('card__link', function (ctx) {
+        ctx.setTag('a');
+        var url = ctx.getParam('url') || '';
+        var content = ctx.getParam('content') || url.replace(/^(https?:)?\/\//, '');
+        ctx.setAttr('href', url);
+        ctx.setContent(content);
     });
 
     bt.match('card__name', function (ctx) {
@@ -75,7 +99,6 @@ module.exports = function (bt) {
         'card__cellular',
         'card__site'
     ], function (ctx) {
-//        ctx.setTag('p');
         ctx.setContent(ctx.getParam('content'));
     });
 
@@ -83,10 +106,38 @@ module.exports = function (bt) {
         ctx.setContent(ctx.getParam('content'));
     });
 
-    bt.match('card__link', function (ctx) {
-        ctx.setTag('a');
-        var siteUrl = ctx.getParam('url');
-        ctx.setAttr('href', siteUrl);
-        ctx.setContent(siteUrl.replace(/^(https?:)?\/\//, ''));
+    bt.match('card__email', function (ctx) {
+        var email = ctx.getParam('content');
+        ctx.setContent({
+            elem: 'link',
+            url: 'mailto:' + email,
+            content: email
+        });
+    });
+
+    bt.match('card__github', function (ctx) {
+        ctx.setContent({
+            elem: 'link',
+            url: 'http://github.com/' + ctx.getParam('content')
+        });
+    });
+
+    bt.match('card__linkedin', function (ctx) {
+        ctx.setContent({
+            elem: 'link',
+            url: 'http://linkedin.com/' + ctx.getParam('content')
+        });
+    });
+
+    bt.match('card__skype', function (ctx) {
+        var skypeName = ctx.getParam('content');
+        ctx.setContent([
+            'skype: ',
+            {
+                elem: 'link',
+                url: 'skype:' + skypeName,
+                content: skypeName
+            }
+        ]);
     });
 };
