@@ -4,15 +4,19 @@
   $border-top-width = 0.5*$height
   $border-left-width = 0.15*$width
 
-  display none
-  &._visible
-    display block
+  position absolute
+  top 50%
+  left 50%
+  width $width
+  height $height
+  margin-left -($width / 2)
+  margin-top -($height / 2)
 
-  -webkit-transition -webkit-transform .5s ease-out
-  -webkit-transform rotate3d(1,0, 0, 0deg)
+  -webkit-transition -webkit-transform 1s ease-in-out
+  -webkit-transform rotateX(180deg)
+  -webkit-backface-visibility: hidden;
   &._visible
-    -webkit-transform rotate3d(1,0, 0, 260deg)
-
+    -webkit-transform rotateX(0deg)
 
   &__self
     display inline-block
