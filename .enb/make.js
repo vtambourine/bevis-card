@@ -8,6 +8,7 @@ module.exports = function (config) {
             require('enb/techs/files'),
             [ require('enb-bt/techs/bt-server') ],
             require('enb/techs/css-stylus'),
+            require('enb/techs/js'),
             [ require('enb/techs/html-from-bemjson'), {
                 bemhtmlTarget: '?.bt.js',
                 bemjsonTarget: '?.bemjson.js',
@@ -17,7 +18,8 @@ module.exports = function (config) {
 
         nodeConfig.addTargets([
             '?.html',
-            '?.css'
+            '?.css',
+            '?.js'
         ]);
     });
 

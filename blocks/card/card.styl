@@ -4,9 +4,15 @@
   $border-top-width = 0.5*$height
   $border-left-width = 0.15*$width
 
-  display table-cell
-  vertical-align middle
-  text-align center
+  display none
+  &._visible
+    display block
+
+  -webkit-transition -webkit-transform .5s ease-out
+  -webkit-transform rotate3d(1,0, 0, 0deg)
+  &._visible
+    -webkit-transform rotate3d(1,0, 0, 260deg)
+
 
   &__self
     display inline-block

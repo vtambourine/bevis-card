@@ -1,7 +1,14 @@
 module.exports = function (bt) {
     bt.match('page', function (ctx) {
         ctx.setTag('body');
-        ctx.setContent(ctx.getParam('body'));
+        var scripts = ctx.getParam('scripts').map(function (script) {
+           return {
+               elem: 'script',
+               url: script.url,
+               source: script.source
+           }
+        });
+        ctx.setContent([ctx.getParam('body'), scripts]);
         var stylesheets = ctx.getParam('styles').map(function (style) {
             return {
                 elem: 'stylesheet',
@@ -27,7 +34,7 @@ module.exports = function (bt) {
                             stylesheets
                         ]
                     },
-                    ctx.getJson()
+                    ctx.getJson(),
                 ]
             }
         ]
@@ -55,6 +62,20 @@ module.exports = function (bt) {
         ctx.disableCssClassGeneration();
         ctx.setTag('title');
         ctx.setContent(ctx.getParam('content'));
+    });
+
+    bt.match('page__script', function (ctx) {
+        ctx.disableCssClassGeneration();
+        ctx.setTag('script');
+        ctx.setAttr('type', 'text/javascript');
+        var url = ctx.getParam('url');
+        if (url) {
+            ctx.setAttr('src', url);
+        }
+        var source = ctx.getParam('source');
+        if (source) {
+            ctx.setContent(source);
+        }
     });
 
     bt.match('page__stylesheet', function (ctx) {
