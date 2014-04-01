@@ -1,8 +1,11 @@
 .card
-  $width = 540px
   $height = 300px
-  $border-top-width = 0.5*$height
-  $border-left-width = 0.15*$width
+  $width = 1.5 * $height
+  /*$arrow-side = 0.58 * $height*/
+  $arrow-side = $height/1.41
+  $arrow-offset = 0.25 * $height
+  $border-color = #fd0
+  $border-width = 3px
 
   position absolute
   top 50%
@@ -20,31 +23,28 @@
 
   &__self
     display inline-block
-    width 0.85*$width
+    width $width
     height $height
-    margin-left -($border-left-width)
     text-align left
     background-color white
+    border-color $border-color
+    border-width $border-width 0 $border-width $border-width
+    border-style solid
+    cursor pointer
 
     &:before
-      float right
       display block
-      width 0
-      margin-right -($border-left-width)
       content ''
-      border-width $border-top-width 0 $border-top-width $border-left-width
-      border-color transparent transparent transparent white
+      position absolute
+      top 45px
+      right -112px
+      width $arrow-side
+      height $arrow-side
+      transform scaleX(0.61) rotate(-45deg)
+      background-image linear-gradient(-45deg, white 0, white 50%, transparent 50%)
+      border-color $border-color
+      border-width 0 $border-width $border-width 0
       border-style solid
-      background-color transparent
-
-  &__lang
-    position absolute
-    top -20px
-    left -20px
-    width 40px
-    height 40px
-    background-color #bada55
-    cursor pointer
 
   logo()
     position absolute
