@@ -31,7 +31,8 @@ module.exports = function (bt) {
                     email: ctx.getParam('email'),
                     github: ctx.getParam('github'),
                     linkedin: ctx.getParam('linkedin'),
-                    skype: ctx.getParam('skype')
+                    skype: ctx.getParam('skype'),
+                    homepage: ctx.getParam('homepage')
                 }
             ]
         });
@@ -64,21 +65,27 @@ module.exports = function (bt) {
         ctx.setTag('section');
         var fields = ['address', 'phone', 'cellular', 'site'];
         ctx.setContent(fields.map(function (field) {
-            return {
-                elem: field,
-                content: ctx.getParam(field)
-            };
+            var param = ctx.getParam(field);
+            if (param) {
+                return {
+                    elem: field,
+                    content: param
+                };
+            }
         }));
     });
 
     bt.match('card*__social', function (ctx) {
         ctx.setTag('section');
-        var fields = ['email', 'github', 'linkedin', 'skype'];
+        var fields = ['email', 'github', 'linkedin', 'skype', 'homepage'];
         ctx.setContent(fields.map(function (field) {
-            return {
-                elem: field,
-                content: ctx.getParam(field)
-            };
+            var param = ctx.getParam(field);
+            if (param) {
+                return {
+                    elem: field,
+                    content: param
+                };
+            }
         }));
     });
 
@@ -149,5 +156,12 @@ module.exports = function (bt) {
                 content: skypeName
             }
         ]);
+    });
+
+    bt.match('card*__homepage', function (ctx) {
+        ctx.setContent({
+            elem: 'link',
+            url: ctx.getParam('content')
+        });
     });
 };

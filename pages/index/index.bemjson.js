@@ -17,29 +17,29 @@ module.exports = {
                     block: 'card',
                     lang: 'ru',
                     name: 'Вениамин Тамбурин',
-                    position: 'Разработчик интрфейсов геоинформационных сервисов',
+                    position: 'Разработчик интрфейсов',
                     address: 'Россия, Москва, 119021\<br\>ул. Льва Толстого, д. 16',
-                    phone: 'тел.: +7 (495) 739-70-00, доб. 6861',
+                    phone: 'тел.: +7 (495) 739-70-00, доб.: 6861',
                     cellular: 'моб.: +7 (965) 214-08-51',
                     site: 'http://beta.maps.yandex.ru',
                     email: 'benjamin@yandex-team.ru',
                     github: 'vtambourine',
                     linkedin: 'vtambourine',
-                    skype: 'vtambourine'
+                    homepage: 'http://alienstook.me'
                 },
                 {
                     block: 'card',
                     lang: 'en',
                     name: 'Benjamin Tambourine',
-                    position: 'User Interface Developer',
-                    address: '16 L\'va Toltogo, Moscow',
-                    phone: 'тел.: +7 (495) 739-70-00, доб. 6861',
-                    cellular: 'моб.: +7 (965) 214-08-51',
+                    position: ' UI Developer',
+                    address: '16, Leo Tolstoy st.\<br\>119021, Moscow, Russia',
+                    phone: 'tel.: +7 (495) 739-70-00, ext. 6861',
+                    cellular: 'cell.: +7 (965) 214-08-51',
                     site: 'http://beta.maps.yandex.ru',
                     email: 'benjamin@yandex-team.ru',
                     github: 'vtambourine',
                     linkedin: 'vtambourine',
-                    skype: 'vtambourine'
+                    homepage: 'http://alienstook.me'
                 }
             ]
         }
