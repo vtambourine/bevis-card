@@ -24,7 +24,7 @@
     height $height
     margin-left -($border-left-width)
     text-align left
-    background white url('yandex-logo.svg') 27px center no-repeat
+    background-color white
 
     &:before
       float right
@@ -36,6 +36,32 @@
       border-color transparent transparent transparent white
       border-style solid
       background-color transparent
+
+  &__lang
+    position absolute
+    top -20px
+    left -20px
+    width 40px
+    height 40px
+    background-color #bada55
+    cursor pointer
+
+  logo()
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background transparent 27px center no-repeat
+
+  &__logo-ru
+    logo()
+    background-image url('yandex-logo-ru.svg')
+
+  &__logo-en
+    logo()
+    background-image url('yandex-logo-en.svg')
+
 
   &__credential
     margin-left 165px

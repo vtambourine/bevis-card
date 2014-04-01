@@ -15,6 +15,7 @@ module.exports = {
             cards: [
                 {
                     block: 'card',
+                    lang: 'ru',
                     name: 'Вениамин Тамбурин',
                     position: 'Разработчик интрфейсов геоинформационных сервисов',
                     address: 'Россия, Москва, 119021\<br\>ул. Льва Толстого, д. 16',
@@ -28,6 +29,7 @@ module.exports = {
                 },
                 {
                     block: 'card',
+                    lang: 'en',
                     name: 'Benjamin Tambourine',
                     position: 'User Interface Developer',
                     address: '16 L\'va Toltogo, Moscow',

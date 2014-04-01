@@ -7,6 +7,13 @@ module.exports = function (bt) {
             elem: 'self',
             content: [
                 {
+                    elem: 'lang',
+                    lang: ctx.getParam('lang')
+                },
+                {
+                    elem: 'logo-' + ctx.getParam('lang')
+                },
+                {
                     elem: 'title',
                     name: ctx.getParam('name'),
                     position: ctx.getParam('position')
@@ -36,6 +43,10 @@ module.exports = function (bt) {
             elem: 'credential',
             content: ctx.getParam('content')
         });
+    });
+
+    bt.match('card*__lang', function (ctx) {
+        ctx.setContent(ctx.getParam('lang'));
     });
 
     bt.match('card*__credential', function (ctx) {
