@@ -31,7 +31,7 @@ module.exports = {
                     block: 'card',
                     lang: 'en',
                     name: 'Benjamin Tambourine',
-                    position: ' UI Developer',
+                    position: 'UI Developer',
                     address: '16, Leo Tolstoy st.\<br\>119021, Moscow, Russia',
                     phone: 'tel.: +7 (495) 739-70-00, ext. 6861',
                     cellular: 'cell.: +7 (965) 214-08-51',

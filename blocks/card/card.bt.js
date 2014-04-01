@@ -5,14 +5,8 @@ module.exports = function (bt) {
         }
         ctx.setContent({
             elem: 'self',
+            lang: ctx.getParam('lang'),
             content: [
-                {
-                    elem: 'lang',
-                    lang: ctx.getParam('lang')
-                },
-                {
-                    elem: 'logo-' + ctx.getParam('lang')
-                },
                 {
                     elem: 'title',
                     name: ctx.getParam('name'),
@@ -40,10 +34,19 @@ module.exports = function (bt) {
 
     bt.match('card*__self', function (ctx) {
         ctx.setTag('article');
-        ctx.setContent({
-            elem: 'credential',
-            content: ctx.getParam('content')
-        });
+        ctx.setContent([
+            {
+                elem: 'lang',
+                lang: ctx.getParam('lang')
+            },
+            {
+                elem: 'logo-' + ctx.getParam('lang')
+            },
+            {
+                elem: 'credential',
+                content: ctx.getParam('content')
+            }
+        ]);
     });
 
     bt.match('card*__lang', function (ctx) {
