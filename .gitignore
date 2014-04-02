@@ -1,4 +1,7 @@
 node_modules
+index.css
+index.html
+index.js
 .enb/tmp
 blocks/**/*.css
 pages/index/*
