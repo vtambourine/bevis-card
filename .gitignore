@@ -1,5 +1,5 @@
 node_modules
 .enb/tmp
-*.css
+blocks/**/*.css
 pages/index/*
 !pages/index/*.bemjson.js
