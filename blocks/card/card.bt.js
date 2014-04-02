@@ -49,10 +49,6 @@ module.exports = function (bt) {
         ]);
     });
 
-    bt.match('card*__lang', function (ctx) {
-        ctx.setContent('⟲');
-    });
-
     bt.match('card*__credential', function (ctx) {
         ctx.setContent(ctx.getParam('content'));
     });
