@@ -1,0 +1,113 @@
+/* /Users/benjamin/Projects/bevis-vcard/blocks/page/page.styl:begin */
+html,
+body {
+  font: 12px/1.3 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f6f5f3;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.page {
+  display: table;
+}
+/* /Users/benjamin/Projects/bevis-vcard/blocks/page/page.styl:end */
+/* /Users/benjamin/Projects/bevis-vcard/blocks/cards-collection/cards-collection.styl:begin */
+.cards-collection {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+/* /Users/benjamin/Projects/bevis-vcard/blocks/cards-collection/cards-collection.styl:end */
+/* /Users/benjamin/Projects/bevis-vcard/blocks/card/card.styl:begin */
+.card {
+/*$arrow-side = 0.58 * $height*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 450px;
+  height: 300px;
+  margin-left: -225px;
+  margin-top: -150px;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  -webkit-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.card._visible {
+  -webkit-transform: rotateX(0deg);
+  -ms-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+.card__self {
+  display: inline-block;
+  width: 450px;
+  height: 300px;
+  text-align: left;
+  background-color: #fff;
+  border-color: #fd0;
+  border-width: 3px 0 3px 3px;
+  border-style: solid;
+  cursor: pointer;
+}
+.card__self:before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 45px;
+  right: -112px;
+  width: 212.76595744680853px;
+  height: 212.76595744680853px;
+  -webkit-transform: scaleX(0.61) rotate(-45deg);
+  -ms-transform: scaleX(0.61) rotate(-45deg);
+  transform: scaleX(0.61) rotate(-45deg);
+  background-image: -webkit-linear-gradient(135deg, #fff 0, #fff 50%, transparent 50%);
+  background-image: linear-gradient(-45deg, #fff 0, #fff 50%, transparent 50%);
+  border-color: #fd0;
+  border-width: 0 3px 3px 0;
+  border-style: solid;
+}
+.card__logo-ru {
+  float: left;
+  width: 165px;
+  height: 100%;
+  background: transparent 27px center no-repeat;
+  background-image: url(blocks/card/yandex-logo-ru.svg);
+}
+.card__logo-en {
+  float: left;
+  width: 165px;
+  height: 100%;
+  background: transparent 27px center no-repeat;
+  background-image: url(blocks/card/yandex-logo-en.svg);
+}
+.card__title {
+  min-height: 98px;
+  margin-top: 30px;
+}
+.card__name {
+  font-weight: normal;
+  font-size: 27px;
+  margin: 0;
+}
+.card__position {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1;
+  margin: 0;
+}
+.card__contact {
+  margin-bottom: 10px;
+}
+/* /Users/benjamin/Projects/bevis-vcard/blocks/card/card.styl:end */
